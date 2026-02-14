@@ -21,7 +21,7 @@
     },
     {
       name: "Email",
-      url: "mailto:xiscosastre@gmail.com",
+      url: "mailto:hello@xiscosc.codes",
       icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="size-5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>`,
     },
   ];
@@ -53,9 +53,7 @@
         in:fly={{ y: 30, duration: 600, delay: 200, easing: cubicOut }}
         class="text-center mb-2"
       >
-        <h1
-          class="text-3xl font-semibold tracking-tight text-stone-800"
-        >
+        <h1 class="text-3xl font-semibold tracking-tight text-stone-800">
           Xisco Sastre Cabot
         </h1>
       </div>
@@ -66,10 +64,22 @@
         class="flex gap-3 text-xl mb-4"
         aria-label="coding, running, cycling, trail running"
       >
-        <span class="hover:scale-125 active:scale-125 transition-transform duration-200 cursor-default">💻</span>
-        <span class="hover:scale-125 active:scale-125 transition-transform duration-200 cursor-default">🏃</span>
-        <span class="hover:scale-125 active:scale-125 transition-transform duration-200 cursor-default">🚴</span>
-        <span class="hover:scale-125 active:scale-125 transition-transform duration-200 cursor-default">👟</span>
+        <span
+          class="hover:scale-125 active:scale-125 transition-transform duration-200 cursor-default"
+          >💻</span
+        >
+        <span
+          class="hover:scale-125 active:scale-125 transition-transform duration-200 cursor-default"
+          >🏃</span
+        >
+        <span
+          class="hover:scale-125 active:scale-125 transition-transform duration-200 cursor-default"
+          >🚴</span
+        >
+        <span
+          class="hover:scale-125 active:scale-125 transition-transform duration-200 cursor-default"
+          >👟</span
+        >
       </div>
 
       <!-- Bio -->
@@ -78,8 +88,14 @@
         class="mb-8"
       >
         <p class="flex flex-col items-center gap-4">
-          <span class="font-mono bg-stone-900 text-white px-2 py-0.5 rounded-sm inline-block -rotate-2">Software Engineer</span>
-          <span class="bg-stone-200 text-stone-600 text-sm tracking-widest uppercase px-2 py-0.5 rounded-sm inline-block rotate-2 border border-stone-300">based in Mallorca 🌴</span>
+          <span
+            class="font-mono bg-stone-900 text-white px-2 py-0.5 rounded-sm inline-block -rotate-2"
+            >Software Engineer</span
+          >
+          <span
+            class="bg-stone-200 text-stone-600 text-sm tracking-widest uppercase px-2 py-0.5 rounded-sm inline-block rotate-2 border border-stone-300"
+            >based in Mallorca 🌴</span
+          >
         </p>
       </div>
 
