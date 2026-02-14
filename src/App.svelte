@@ -77,10 +77,9 @@
         in:fly={{ y: 20, duration: 600, delay: 500, easing: cubicOut }}
         class="mb-8"
       >
-        <p
-          class="text-stone-500 text-sm text-center leading-relaxed"
-        >
-          Software Engineer based in Mallorca 🌴
+        <p class="flex flex-col items-center gap-4">
+          <span class="font-mono bg-stone-900 text-white px-2 py-0.5 rounded-sm inline-block -rotate-2">Software Engineer</span>
+          <span class="bg-stone-200 text-stone-600 text-sm tracking-widest uppercase px-2 py-0.5 rounded-sm inline-block rotate-2 border border-stone-300">based in Mallorca 🌴</span>
         </p>
       </div>
 

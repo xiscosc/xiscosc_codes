@@ -1,8 +1,8 @@
-@import "@fontsource-variable/geist";
 @import "tailwindcss";
 
 @theme {
-	--font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+	--font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+	--font-mono: "Geist Mono", ui-monospace, monospace;
 }
 
 @keyframes gradient-shift {
