@@ -38,7 +38,7 @@
         class="mb-8"
       >
         <div
-          class="size-44 rounded-full overflow-hidden ring-4 ring-white/60 shadow-2xl hover:scale-105 transition-transform duration-300"
+          class="size-44 rounded-full overflow-hidden ring-4 ring-white/60 shadow-2xl hover:scale-105 active:scale-105 transition-transform duration-300"
         >
           <enhanced:img
             src="./assets/10050822.jpg"
@@ -66,10 +66,10 @@
         class="flex gap-3 text-xl mb-4"
         aria-label="coding, running, cycling, trail running"
       >
-        <span class="hover:scale-125 transition-transform duration-200 cursor-default">💻</span>
-        <span class="hover:scale-125 transition-transform duration-200 cursor-default">🏃</span>
-        <span class="hover:scale-125 transition-transform duration-200 cursor-default">🚴</span>
-        <span class="hover:scale-125 transition-transform duration-200 cursor-default">👟</span>
+        <span class="hover:scale-125 active:scale-125 transition-transform duration-200 cursor-default">💻</span>
+        <span class="hover:scale-125 active:scale-125 transition-transform duration-200 cursor-default">🏃</span>
+        <span class="hover:scale-125 active:scale-125 transition-transform duration-200 cursor-default">🚴</span>
+        <span class="hover:scale-125 active:scale-125 transition-transform duration-200 cursor-default">👟</span>
       </div>
 
       <!-- Bio -->
@@ -94,7 +94,7 @@
             target="_blank"
             rel="noopener noreferrer"
             aria-label={link.name}
-            class="flex items-center justify-center size-10 rounded-full bg-white/50 backdrop-blur-sm text-stone-500 hover:bg-white hover:text-orange-500 hover:shadow-lg hover:scale-110 transition-all duration-200"
+            class="flex items-center justify-center size-10 rounded-full bg-white/50 backdrop-blur-sm text-stone-500 hover:bg-white hover:text-orange-500 hover:shadow-lg hover:scale-110 active:bg-white active:text-orange-500 active:shadow-lg active:scale-110 transition-all duration-200"
           >
             {@html link.icon}
           </a>
