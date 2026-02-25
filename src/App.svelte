@@ -2,10 +2,43 @@
   import { cubicOut } from "svelte/easing";
   import { fade, fly, scale } from "svelte/transition";
 
+  // Shuffle image order once on load, then cycle through
+  const order = [0, 1, 2];
+  for (let i = order.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [order[i], order[j]] = [order[j], order[i]];
+  }
+
+  const animations = [
+    "animate-swing-drop-in",
+    "animate-slide-rotate-in",
+    "animate-fade-in-up",
+    "animate-fade-in-right",
+  ];
+
   let visible = $state(false);
+  let step = $state(0);
+  let currentImage = $derived(order[step % order.length]);
+  let currentAnim = $state(
+    animations[Math.floor(Math.random() * animations.length)],
+  );
+  let cardZ = $state([0, 0, 0]);
+
+  $effect.pre(() => {
+    cardZ[currentImage] = step + 1;
+  });
 
   $effect(() => {
     visible = true;
+    const interval = setInterval(() => {
+      let next: string;
+      do {
+        next = animations[Math.floor(Math.random() * animations.length)];
+      } while (next === currentAnim);
+      currentAnim = next;
+      step++;
+    }, 5000);
+    return () => clearInterval(interval);
   });
 
   const links = [
@@ -28,20 +61,41 @@
 </script>
 
 <div
-  class="animated-gradient min-h-screen flex items-center justify-center px-6 bg-linear-to-br from-orange-200 via-rose-100 to-sky-200"
+  class="min-h-screen flex items-center justify-center px-6 bg-linear-to-br from-orange-200 via-rose-100 to-sky-200 bg-[length:300%_300%] animate-gradient-shift"
 >
   <div class="max-w-md w-full flex flex-col items-center">
     {#if visible}
       <!-- Photo -->
       <div
         in:scale={{ duration: 700, start: 0.6, easing: cubicOut }}
-        class="mb-8"
+        class="relative size-44 mb-8"
       >
         <div
-          class="size-44 rounded-full overflow-hidden ring-4 ring-white/60 shadow-2xl hover:scale-105 active:scale-105 transition-transform duration-300"
+          class="absolute inset-0 size-full rounded-full overflow-hidden ring-4 ring-white/60 shadow-2xl {currentImage === 0 && step > 0 ? currentAnim + ' animate-duration-700' : ''}"
+          style="z-index: {cardZ[0]}"
         >
           <enhanced:img
-            src="./assets/10050822.jpg"
+            src="./assets/img1.jpg"
+            alt="Xisco Sastre Cabot"
+            class="size-full object-cover"
+          />
+        </div>
+        <div
+          class="absolute inset-0 size-full rounded-full overflow-hidden ring-4 ring-white/60 shadow-2xl {currentImage === 1 && step > 0 ? currentAnim + ' animate-duration-700' : ''}"
+          style="z-index: {cardZ[1]}"
+        >
+          <enhanced:img
+            src="./assets/img2.jpg"
+            alt="Xisco Sastre Cabot"
+            class="size-full object-cover"
+          />
+        </div>
+        <div
+          class="absolute inset-0 size-full rounded-full overflow-hidden ring-4 ring-white/60 shadow-2xl {currentImage === 2 && step > 0 ? currentAnim + ' animate-duration-700' : ''}"
+          style="z-index: {cardZ[2]}"
+        >
+          <enhanced:img
+            src="./assets/img3.jpeg"
             alt="Xisco Sastre Cabot"
             class="size-full object-cover"
           />

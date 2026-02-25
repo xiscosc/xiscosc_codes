@@ -1,21 +1,18 @@
 @import "tailwindcss";
+@import "tailwind-animations";
 
 @theme {
 	--font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
 	--font-mono: "Geist Mono", ui-monospace, monospace;
-}
+	--animate-gradient-shift: gradient-shift 12s ease infinite;
 
-@keyframes gradient-shift {
-	0%,
-	100% {
-		background-position: 0% 50%;
+	@keyframes gradient-shift {
+		0%,
+		100% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
 	}
-	50% {
-		background-position: 100% 50%;
-	}
-}
-
-.animated-gradient {
-	background-size: 300% 300%;
-	animation: gradient-shift 12s ease infinite;
 }
