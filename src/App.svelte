@@ -1,16 +1,16 @@
 <script lang="ts">
   import { cubicOut } from "svelte/easing";
-  import { fade, fly, scale } from "svelte/transition";
+  import { fly, scale } from "svelte/transition";
 
   const photos = [
     {
-      alt: "Xisco Sastre Cabot smiling outdoors",
+      alt: "Xisco Sastre Cabot after finishing a half marathon",
     },
     {
-      alt: "Xisco Sastre Cabot at the beach",
+      alt: "Xisco Sastre Cabot in the old town of Antwerp",
     },
     {
-      alt: "Xisco Sastre Cabot training outdoors",
+      alt: "Xisco Sastre Cabot riding a road bike",
     },
   ];
 
@@ -149,35 +149,30 @@
               <div
                 class="relative aspect-[4/5] overflow-hidden rounded-[1.35rem] border border-white/80 bg-stone-200 shadow-[0_22px_44px_rgba(60,40,20,0.16)] sm:rounded-[1.8rem] sm:shadow-[0_28px_55px_rgba(60,40,20,0.18)]"
               >
-                {#key currentImage}
-                  <div
-                    transition:fade={{ duration: 350 }}
-                    class="absolute inset-0"
-                  >
-                    {#if currentImage === 0}
-                      <enhanced:img
-                        src="./assets/img1.jpg"
-                        alt={photos[0].alt}
-                        sizes="(min-width: 1024px) 544px, (min-width: 640px) 464px, 384px"
-                        class="size-full object-cover"
-                      />
-                    {:else if currentImage === 1}
-                      <enhanced:img
-                        src="./assets/img2.jpg"
-                        alt={photos[1].alt}
-                        sizes="(min-width: 1024px) 544px, (min-width: 640px) 464px, 384px"
-                        class="size-full object-cover"
-                      />
-                    {:else}
-                      <enhanced:img
-                        src="./assets/img3.jpeg"
-                        alt={photos[2].alt}
-                        sizes="(min-width: 1024px) 544px, (min-width: 640px) 464px, 384px"
-                        class="size-full object-cover"
-                      />
-                    {/if}
-                  </div>
-                {/key}
+                <div class="absolute inset-0">
+                  <enhanced:img
+                    src="./assets/img1.jpg"
+                    alt={photos[0]!.alt}
+                    sizes="(min-width: 1024px) 544px, (min-width: 640px) 464px, 384px"
+                    class="size-full object-cover transition-opacity duration-350 {currentImage === 0 ? 'opacity-100' : 'opacity-0'}"
+                  />
+                </div>
+                <div class="absolute inset-0">
+                  <enhanced:img
+                    src="./assets/img2.jpg"
+                    alt={photos[1]!.alt}
+                    sizes="(min-width: 1024px) 544px, (min-width: 640px) 464px, 384px"
+                    class="size-full object-cover transition-opacity duration-350 {currentImage === 1 ? 'opacity-100' : 'opacity-0'}"
+                  />
+                </div>
+                <div class="absolute inset-0">
+                  <enhanced:img
+                    src="./assets/img3.jpeg"
+                    alt={photos[2]!.alt}
+                    sizes="(min-width: 1024px) 544px, (min-width: 640px) 464px, 384px"
+                    class="size-full object-cover transition-opacity duration-350 {currentImage === 2 ? 'opacity-100' : 'opacity-0'}"
+                  />
+                </div>
               </div>
 
               <div
