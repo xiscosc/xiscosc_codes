@@ -151,7 +151,7 @@
               >
                 <div class="absolute inset-0">
                   <enhanced:img
-                    src="./assets/img1.jpg"
+                    src="$lib/assets/img1.jpg"
                     alt={photos[0]!.alt}
                     sizes="(min-width: 1024px) 544px, (min-width: 640px) 464px, 384px"
                     class="size-full object-cover transition-opacity duration-350 {currentImage === 0 ? 'opacity-100' : 'opacity-0'}"
@@ -159,7 +159,7 @@
                 </div>
                 <div class="absolute inset-0">
                   <enhanced:img
-                    src="./assets/img2.jpg"
+                    src="$lib/assets/img2.jpg"
                     alt={photos[1]!.alt}
                     sizes="(min-width: 1024px) 544px, (min-width: 640px) 464px, 384px"
                     class="size-full object-cover transition-opacity duration-350 {currentImage === 1 ? 'opacity-100' : 'opacity-0'}"
@@ -167,7 +167,7 @@
                 </div>
                 <div class="absolute inset-0">
                   <enhanced:img
-                    src="./assets/img3.jpeg"
+                    src="$lib/assets/img3.jpeg"
                     alt={photos[2]!.alt}
                     sizes="(min-width: 1024px) 544px, (min-width: 640px) 464px, 384px"
                     class="size-full object-cover transition-opacity duration-350 {currentImage === 2 ? 'opacity-100' : 'opacity-0'}"

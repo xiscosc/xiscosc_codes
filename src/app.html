@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="Xisco Sastre Cabot - Software Engineer based in Mallorca"
+		/>
+		<meta property="og:title" content="Xisco Sastre Cabot" />
+		<meta
+			property="og:description"
+			content="Software Engineer based in Mallorca"
+		/>
+		<meta property="og:type" content="website" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Seaweed+Script&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap"
+			rel="stylesheet"
+		/>
+
+		<title>Xisco Sastre Cabot</title>
+		<script>
+			const emojis = ["💻", "🏃", "🚴", "👟"];
+			let i = 0;
+			function rotateFavicon() {
+				const canvas = document.createElement("canvas");
+				canvas.width = 64;
+				canvas.height = 64;
+				const ctx = canvas.getContext("2d");
+				ctx.font = "56px serif";
+				ctx.textAlign = "center";
+				ctx.textBaseline = "middle";
+				ctx.fillText(emojis[i], 32, 36);
+				const link =
+					document.querySelector('link[rel="icon"]') ||
+					document.createElement("link");
+				link.type = "image/x-icon";
+				link.rel = "icon";
+				link.href = canvas.toDataURL();
+				document.head.appendChild(link);
+				i = (i + 1) % emojis.length;
+			}
+			rotateFavicon();
+			setInterval(rotateFavicon, 2000);
+		</script>
+
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>
