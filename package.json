@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.8",
-    "@sveltejs/adapter-static": "^3.0.10",
+    "@sveltejs/adapter-cloudflare": "^7.2.8",
     "@sveltejs/enhanced-img": "^0.10.4",
     "@sveltejs/kit": "^2.55.0",
     "@tailwindcss/vite": "^4.2.2",
