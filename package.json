@@ -2,7 +2,6 @@
   "name": "xiscosc_codes",
   "private": true,
   "type": "module",
-  "module": "index.ts",
   "scripts": {
     "dev": "vp dev",
     "update-packages": "pnpm dlx npm-check-updates -u && bun i",
@@ -14,8 +13,9 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.8",
+    "@sveltejs/adapter-cloudflare": "^7.2.8",
     "@sveltejs/enhanced-img": "^0.10.4",
-    "@sveltejs/vite-plugin-svelte": "^7.0.0",
+    "@sveltejs/kit": "^2.55.0",
     "@tailwindcss/vite": "^4.2.2",
     "@types/bun": "latest",
     "svelte": "^5.54.0",
